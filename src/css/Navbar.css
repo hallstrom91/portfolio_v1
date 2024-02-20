@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Protest+Revolution&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Fredoka:wght@300..700&display=swap");
+
+.navLogo {
+  font-family: "Protest Revolution", sans-serif;
+  color: whitesmoke;
+}
+
+.navLink {
+  font-family: "Fredoka", sans-serif;
+  color: whitesmoke;
+}
+
+.anta-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

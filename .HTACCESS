@@ -1,0 +1,4 @@
+Options -MultiViews
+ReWriteEngine On
+ReWriteCond %{REQUEST_FILENAME} !-f
+ReWriteRule ^ About.jsx [QSA,L]
