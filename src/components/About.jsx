@@ -1,5 +1,4 @@
 import React from "react";
-import imgLOAD from "../images/Images";
 
 export default function About() {
   return (
@@ -38,7 +37,7 @@ export default function About() {
             <img
               className="object-hover object-center rounded"
               alt="MeMyselfandI"
-              src={`${imgLOAD.imgFadeIn}?${new Date().getTime()}`}
+              src={`/images/profil.png?${new Date().getTime()}`}
             />
           </div>
         </div>

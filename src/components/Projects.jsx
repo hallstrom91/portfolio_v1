@@ -1,7 +1,7 @@
 import React from "react";
+
 import { FaReact } from "react-icons/fa"; /* <FaReact /> */
 import { SiVite } from "react-icons/si"; /* <SiVite /> */
-import imgLOAD from "../images/Images";
 import { projects } from "../data.js";
 
 export default function Projects() {

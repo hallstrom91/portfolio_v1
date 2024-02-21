@@ -1,31 +1,63 @@
-import React from "react";
-import { PiGithubLogoThin } from "react-icons/pi"; /* <PiGithubLogoThin /> */
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import Social from "./Social";
+import { PiGithubLogoThin } from "react-icons/pi"; /* <PiGithubLogoThin /> */
+
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 export default function Contact() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
-
-  function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  }
-
-  function handleSubmit(e) {
+  function sendEmail(e) {
     e.preventDefault();
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
-    })
-      .then(() => alert("Your Message has been sent!"))
-      .catch((error) => alert(error));
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, {
+        publicKey: PUBLIC_KEY, // FUNKAR MED DIREKT INPUT
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   }
 
+  /*   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [stateMessage, setStateMessage] = useState(null);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.persist();
+    e.preventDefault();
+    setIsSubmitting(true);
+  };
+
+  emailjs
+    .sendForm(SERVICE_ID, TEMPLATE_ID, {
+      publicKey: PUBLIC_KEY,
+    })
+    .then(
+      (result) => {
+        setStateMessage("Ditt meddelande har skickats!");
+        setIsSubmitting(false);
+        setTimeout(() => {
+          setStateMessage(null);
+        }, 5000); // hide message after 5s
+      },
+      (error) => {
+        setStateMessage("Något gick fel, försök igen senare.");
+        setIsSubmitting(false);
+        setTimeout(() => {
+          setStateMessage(null);
+        }, 5000); // hide message after 5s
+      }
+    );
+
+  e.target.reset(); */
   return (
     <section
       id="contact"
@@ -36,18 +68,15 @@ export default function Contact() {
           <div className="bg-slate-700 relative flex flex-wrap py-6 rounded-xl shadow-md">
             <div className="lg:w-full px-6 mt-4 lg:mt-0">
               <form
-                netlify
+                onSubmit={sendEmail}
                 name="contact"
-                onSubmit={handleSubmit}
                 className="lg-w-full md:w-full flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 "
               >
-                <Social className="flex justify-center items-center" />
                 <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font flex justify-center items-center anta-regular">
                   Kontakt
                 </h2>
                 <p className="leading-relaxed mb-5">
-                  Vill du kontakta mig är du välkommen att använda formuläret
-                  nedanför.
+                  Vänligen använd formuläret nedan för att kontakta mig.
                 </p>
                 <div className="relative mb-4">
                   <label
@@ -58,10 +87,9 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
-                    id="name"
                     name="name"
+                    autoComplete="name"
                     className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="relative mb-4">
@@ -73,10 +101,9 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
+                    autoComplete="email"
                     className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="relative mb-4">
@@ -87,10 +114,8 @@ export default function Contact() {
                     Meddelande
                   </label>
                   <textarea
-                    id="message"
                     name="message"
                     className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 resize-none leading-10 transition-colors duration-200 ease-in-out"
-                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <button
@@ -99,6 +124,7 @@ export default function Contact() {
                 >
                   Submit
                 </button>
+                {/* {stateMessage && <p>{stateMessage}</p>} */}
               </form>
             </div>
           </div>
