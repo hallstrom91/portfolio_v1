@@ -9,21 +9,37 @@ const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [stateMessage, setStateMessage] = useState(null);
+
   function sendEmail(e) {
     e.preventDefault();
+    e.preventDefault();
+    setIsSubmitting(true);
 
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, {
-        publicKey: PUBLIC_KEY, // FUNKAR MED DIREKT INPUT
+      .sendForm("service_q35q8gn", "template_irv9sbk", e.target, {
+        publicKey: "KLN7PlV1VP66e_pur", // FUNKAR MED DIREKT INPUT
       })
       .then(
         () => {
           console.log("SUCCESS!");
+          setStateMessage("Tack för ditt meddelande!");
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000);
         },
         (error) => {
           console.log("FAILED...", error.text);
+          setStateMessage("Något gick tyvärr fel. Försök igen senare.");
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000);
         }
       );
+    e.target.reset();
   }
 
   /*   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -87,6 +103,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
+                    id="name"
                     name="name"
                     autoComplete="name"
                     className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -101,6 +118,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    id="email"
                     name="email"
                     autoComplete="email"
                     className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -115,6 +133,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     name="message"
+                    id="message"
                     className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 resize-none leading-10 transition-colors duration-200 ease-in-out"
                   />
                 </div>
@@ -124,7 +143,7 @@ export default function Contact() {
                 >
                   Submit
                 </button>
-                {/* {stateMessage && <p>{stateMessage}</p>} */}
+                {stateMessage && <p>{stateMessage}</p>}
               </form>
             </div>
           </div>
