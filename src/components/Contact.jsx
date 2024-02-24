@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 
 import Social from "./Social";
 import { PiGithubLogoThin } from "react-icons/pi"; /* <PiGithubLogoThin /> */
+import { MdOutlineMarkEmailRead } from "react-icons/md";
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
@@ -42,45 +43,13 @@ export default function Contact() {
     e.target.reset();
   }
 
-  /*   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [stateMessage, setStateMessage] = useState(null);
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.persist();
-    e.preventDefault();
-    setIsSubmitting(true);
-  };
-
-  emailjs
-    .sendForm(SERVICE_ID, TEMPLATE_ID, {
-      publicKey: PUBLIC_KEY,
-    })
-    .then(
-      (result) => {
-        setStateMessage("Ditt meddelande har skickats!");
-        setIsSubmitting(false);
-        setTimeout(() => {
-          setStateMessage(null);
-        }, 5000); // hide message after 5s
-      },
-      (error) => {
-        setStateMessage("Något gick fel, försök igen senare.");
-        setIsSubmitting(false);
-        setTimeout(() => {
-          setStateMessage(null);
-        }, 5000); // hide message after 5s
-      }
-    );
-
-  e.target.reset(); */
   return (
     <section
       id="contact"
       className="bg-gradient-to-b from-slate-500 to-slate-400"
     >
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-full md:w-full bg-gray-900 bg-opacity-40 rounded-xl overflow-hidden sm:mr-10 p-10 flex items-center justify-center relative">
+        <div className="lg:w-full md:w-full bg-gray-900 bg-opacity-90 rounded-xl overflow-hidden sm:mr-10 p-10 flex items-center justify-center relative">
           <div className="bg-slate-700 relative flex flex-wrap py-6 rounded-xl shadow-md">
             <div className="lg:w-full px-6 mt-4 lg:mt-0">
               <form
@@ -90,6 +59,7 @@ export default function Contact() {
               >
                 <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font flex justify-center items-center anta-regular">
                   Kontakt
+                  <MdOutlineMarkEmailRead className="ml-1" />
                 </h2>
                 <p className="leading-relaxed mb-5">
                   Vänligen använd formuläret nedan för att kontakta mig.
@@ -143,7 +113,9 @@ export default function Contact() {
                 >
                   Submit
                 </button>
-                {stateMessage && <p>{stateMessage}</p>}
+                <div className="flex justify-center pt-4 text-sky-300">
+                  {stateMessage && <p>{stateMessage}</p>}
+                </div>
               </form>
             </div>
           </div>

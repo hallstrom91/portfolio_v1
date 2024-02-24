@@ -9,16 +9,16 @@ export default function Social() {
         <a
           href="https://github.com/hallstrom91"
           target="_blank"
-          className="text-white hover:text-gray-600 transform hover:scale-200 transition-all ease-in-out text-[40px]"
+          className="text-white hover:text-gray-600 transform hover:scale-200 transition-all ease-in-out "
         >
-          <IoLogoGithub />
+          <IoLogoGithub size={40} />
         </a>
         <a
           href="https://linkedin.com/in/simon-hällström-776b0728a"
           target="_blank"
-          className="text-white hover:text-gray-500 transform hover:scale-200 transition-all ease-in-out text-[40px]"
+          className="text-white hover:text-gray-500 transform hover:scale-200 transition-all ease-in-out "
         >
-          <IoLogoLinkedin />
+          <IoLogoLinkedin size={40} />
         </a>
       </div>
     </>

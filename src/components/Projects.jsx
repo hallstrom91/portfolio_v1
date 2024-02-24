@@ -14,8 +14,8 @@ export default function Projects() {
         <div className="container px-5 py-10 mx-auto text-center lg:px-40">
           <div className="flex flex-col w-full mb-20">
             <div className="inline-block">
-              <FaReact className="mx-auto inline-block w-10 mb-4 text-[40px]" />
-              <SiVite className="mx-auto inline-block w-10 mb-4 text-[40px]" />
+              <FaReact className="mx-auto inline-block w-10 mb-4" size={40} />
+              <SiVite className="mx-auto inline-block w-10 mb-4" size={40} />
             </div>
             <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white anta-regular">
               Projekt

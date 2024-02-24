@@ -22,7 +22,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400  navLink"
               onClick={handleClick}
             >
-              KJS
+              Profil
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -44,8 +44,21 @@ export default function Navbar() {
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
-            <a href="#testimonials" className="mr-5 hover:text-sky-400 navLink">
+            <a
+              href="#testimonials"
+              className="mr-5 hover:text-sky-400 navLink"
+              onClick={handleClick}
+            >
               Omdömen
+            </a>
+          </li>
+          <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
+            <a
+              href="#contact"
+              className="mr-5 hover:text-sky-400 navLink"
+              onClick={handleClick}
+            >
+              Kontakt
             </a>
           </li>
         </ul>
@@ -55,7 +68,7 @@ export default function Navbar() {
   return (
     <>
       {/* Full Size Layout */}
-      <nav className="bg-gradient-to-b from-slate-600 to-slate-900">
+      <nav className="bg-gradient-to-b from-slate-600 to-slate-900" id="navbar">
         <div className="flex justify-between items-center z-50 text-white lg:py-5 px-20 py-4 border-b-2">
           <div className="flex flex-1">
             <span className="text-3xl font-bold ml-3">
@@ -92,16 +105,25 @@ export default function Navbar() {
                     Omdömen
                   </a>
                 </li>
+                <li className="hover:text-slate-600 transition border-b-2 border-slate-800 hover:border-red-500 cursor-pointer">
+                  <a
+                    href="#contact"
+                    className="mr-2 hover:text-sky-400 navLink"
+                  >
+                    Kontakt
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div>{click && content}</div>
 
-          <button
-            className="block md:hidden transition text-[30px]"
-            onClick={handleClick}
-          >
-            {click ? <FaWindowClose /> : <BsFillMenuButtonWideFill />}
+          <button className="block md:hidden transition" onClick={handleClick}>
+            {click ? (
+              <FaWindowClose size={25} />
+            ) : (
+              <BsFillMenuButtonWideFill size={25} />
+            )}
           </button>
         </div>
       </nav>

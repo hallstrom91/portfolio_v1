@@ -11,7 +11,7 @@ export default function Knowledge() {
       >
         <div className="container px-5 py-10 mx-auto">
           <div className="text-center mb-20">
-            <GiMicrochip className="w-10 inline-block mb-4 text-[40px]" />
+            <GiMicrochip className="w-10 inline-block mb-4" size={40} />
             <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4 anta-regular">
               Kunskaper
             </h1>
@@ -32,7 +32,10 @@ export default function Knowledge() {
             {skills.map((skill) => (
               <div key={skill} className="p-2 sm:w-1/2 w-full">
                 <div className="rounded-xl flex p-4 h-full items-center bg-gradient-to-b from-slate-400 to-slate-800 bg-opacity-40">
-                  <PiSealCheckFill className="text-green-300 w-7 h-6 flex-shrink-0 mr-4" />
+                  <PiSealCheckFill
+                    className="text-green-300  flex-shrink-0 mr-4"
+                    size={25}
+                  />
                   <span className="title-font font-medium text-white">
                     {skill}
                   </span>
