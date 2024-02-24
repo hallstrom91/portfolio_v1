@@ -1,5 +1,4 @@
 import React from "react";
-/* import CV from ""; */
 
 export default function About() {
   return (
@@ -32,7 +31,11 @@ export default function About() {
               >
                 Kontakt
               </a>
-              <a className="ml-4 inline-flex text-black bg-blue-300 border-0 py-2 px-6 focus:outline-none hover:bg-blue-500 rounded text-lg">
+              <a
+                href="/downloads/resume.pdf"
+                download="resume.pdf"
+                className="ml-4 inline-flex text-black bg-blue-300 border-0 py-2 px-6 focus:outline-none hover:bg-blue-500 rounded text-lg"
+              >
                 Hämta CV
               </a>
             </div>

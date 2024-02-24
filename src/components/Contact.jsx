@@ -1,13 +1,8 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-
 import Social from "./Social";
 import { PiGithubLogoThin } from "react-icons/pi"; /* <PiGithubLogoThin /> */
 import { MdOutlineMarkEmailRead } from "react-icons/md";
-
-const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,7 +44,7 @@ export default function Contact() {
       className="bg-gradient-to-b from-slate-500 to-slate-400"
     >
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-full md:w-full bg-gray-900 bg-opacity-90 rounded-xl overflow-hidden sm:mr-10 p-10 flex items-center justify-center relative">
+        <div className="lg:w-full md:w-full bg-gray-900 bg-opacity-15 rounded-xl overflow-hidden sm:mr-10 p-10 flex items-center justify-center relative">
           <div className="bg-slate-700 relative flex flex-wrap py-6 rounded-xl shadow-md">
             <div className="lg:w-full px-6 mt-4 lg:mt-0">
               <form
