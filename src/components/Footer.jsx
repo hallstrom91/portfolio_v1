@@ -2,8 +2,8 @@ import React from "react";
 import Social from "./Social";
 import { HiArrowUp } from "react-icons/hi";
 import { SiFramework } from "react-icons/si";
-import { FaReact } from "react-icons/fa"; /* <FaReact /> */
-import { SiVite } from "react-icons/si"; /* <SiVite /> */
+import { FaReact } from "react-icons/fa";
+import { SiVite } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { MdOutlineMailLock } from "react-icons/md";
 import { FaNodeJs } from "react-icons/fa";
@@ -12,10 +12,10 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-gradient-to-b from-slate-600 to-slate-900 text-white text-center border-t-2 border-black overflow-x-hidden">
-        <div className="flex flex-col md:flex-row w-full">
-          <div className="flex-grow md:flex-grow-0 flex-shrink-0 md:w-1/2 p-4 text-left">
+        <div className="flex flex-col md:flex-row w-full pt-2">
+          {/*         <div className="flex-grow md:flex-grow-0 flex-shrink-0 md:w-1/2 p-4 text-left">
             <h3 className="mb-2 leading-8 flex text-lg anta-regular">
-              Ramverk & Paket:
+              Ramverk:
               <SiFramework size={20} className="ml-2 mt-1.5" />
             </h3>
             <ul className="list-disc ml-6 ">
@@ -37,18 +37,10 @@ export default function Footer() {
                 <FaNodeJs className="ml-2" size={15} />
               </li>
             </ul>
-          </div>
-          <div className="flex-grow md:flex-grow-0 flex-shrink-0 md:w-1/2 p-4 text-right">
-            <a
-              href="#navbar"
-              className="inline-flex text-black bg-blue-300 border-0 py-2 px-2 focus:outline-none hover:bg-blue-500 rounded text-lg"
-            >
-              Till Toppen <HiArrowUp size={20} className="mt-1 ml-1" />
-            </a>
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col items-center justify-center mb-4">
-          <div className="p-4 text-center text-white">
+          <div className="pb-2 text-center text-white">
             <Social />
           </div>
           <div className="mb-1">

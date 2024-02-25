@@ -1,5 +1,5 @@
-import { PiSealCheckFill } from "react-icons/pi"; /* <PiSealCheckFill /> */
-import { GiMicrochip } from "react-icons/gi"; /* <GiMicrochip /> */
+import { PiSealCheckFill } from "react-icons/pi";
+import { GiMicrochip } from "react-icons/gi";
 import { skills } from "../data.js";
 
 export default function Knowledge() {
@@ -7,12 +7,12 @@ export default function Knowledge() {
     <>
       <section
         id="knowledge"
-        className="bg-gradient-to-b from-slate-700 to-slate-600 pt-10 pb-40"
+        className="bg-gradient-to-b from-slate-700 to-slate-600 pt pb"
       >
         <div className="container px-5 py-10 mx-auto">
           <div className="text-center mb-20">
             <GiMicrochip className="w-10 inline-block mb-4" size={40} />
-            <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4 anta-regular">
+            <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4 anta-regular underline">
               Kunskaper
             </h1>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">

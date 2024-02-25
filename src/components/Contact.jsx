@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Social from "./Social";
-import { PiGithubLogoThin } from "react-icons/pi"; /* <PiGithubLogoThin /> */
+import { PiGithubLogoThin } from "react-icons/pi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 
 export default function Contact() {
@@ -10,16 +10,63 @@ export default function Contact() {
 
   function sendEmail(e) {
     e.preventDefault();
-    e.preventDefault();
+    setIsSubmitting(true);
+
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const message = e.target.message.value.trim();
+
+    if (name === "" && email === "") {
+      setStateMessage("Fyll i dina uppgifter.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000);
+      return;
+    } else if (name === "") {
+      setStateMessage("Fyll i ditt namn.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000);
+      return;
+    } else if (email === "") {
+      setStateMessage("Fyll i en giltig email.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000);
+      return;
+    }
+
+    const emailRegex =
+      /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+    if (!emailRegex.test(email)) {
+      setStateMessage("Använd en giltig email.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000);
+      return;
+    }
+
+    if (message === "") {
+      setStateMessage("Skriv gärna en rad.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000);
+      return;
+    }
+
     setIsSubmitting(true);
 
     emailjs
       .sendForm("service_q35q8gn", "template_irv9sbk", e.target, {
-        publicKey: "KLN7PlV1VP66e_pur", // FUNKAR MED DIREKT INPUT
+        publicKey: "KLN7PlV1VP66e_pur",
       })
       .then(
         () => {
-          console.log("SUCCESS!");
           setStateMessage("Tack för ditt meddelande!");
           setIsSubmitting(false);
           setTimeout(() => {
@@ -27,7 +74,6 @@ export default function Contact() {
           }, 5000);
         },
         (error) => {
-          console.log("FAILED...", error.text);
           setStateMessage("Något gick tyvärr fel. Försök igen senare.");
           setIsSubmitting(false);
           setTimeout(() => {
@@ -43,9 +89,9 @@ export default function Contact() {
       id="contact"
       className="bg-gradient-to-b from-slate-500 to-slate-400"
     >
-      <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-full md:w-full bg-gray-900 bg-opacity-15 rounded-xl overflow-hidden sm:mr-10 p-10 flex items-center justify-center relative">
-          <div className="bg-slate-700 relative flex flex-wrap py-6 rounded-xl shadow-md">
+      <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap justify-center align-middle">
+        <div className="lg:w-full md:w-full bg-opacity-0 rounded-xl overflow-hidden flex items-center justify-center">
+          <div className="bg-slate-700 relative flex flex-wrap py-6 rounded-xl shadow-md sm:w-full md:w-1/2 lg:w-1/2 mx-auto">
             <div className="lg:w-full px-6 mt-4 lg:mt-0">
               <form
                 onSubmit={sendEmail}
@@ -56,8 +102,9 @@ export default function Contact() {
                   Kontakt
                   <MdOutlineMarkEmailRead className="ml-1" />
                 </h2>
-                <p className="leading-relaxed mb-5">
-                  Vänligen använd formuläret nedan för att kontakta mig.
+                <p className="leading-relaxed mb-5 text-center">
+                  Har du frågor eller vill nå mig? Använd formuläret nedan för
+                  att skicka ett meddelande.
                 </p>
                 <div className="relative mb-4">
                   <label
@@ -71,7 +118,7 @@ export default function Contact() {
                     id="name"
                     name="name"
                     autoComplete="name"
-                    className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
                 <div className="relative mb-4">
@@ -86,7 +133,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     autoComplete="email"
-                    className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
                 <div className="relative mb-4">
@@ -99,7 +146,8 @@ export default function Contact() {
                   <textarea
                     name="message"
                     id="message"
-                    className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-3 resize-none leading-10 transition-colors duration-200 ease-in-out"
+                    rows={5}
+                    className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1  resize-y leading-2 md:leading-2 transition-colors duration-200 ease-in-out"
                   />
                 </div>
                 <button
@@ -108,7 +156,7 @@ export default function Contact() {
                 >
                   Submit
                 </button>
-                <div className="flex justify-center pt-4 text-sky-300">
+                <div className="flex justify-center pt-8 text-sky-300">
                   {stateMessage && <p>{stateMessage}</p>}
                 </div>
               </form>

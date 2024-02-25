@@ -1,5 +1,5 @@
-import { FaUserGraduate } from "react-icons/fa6"; /* <FaUserGraduate /> */
-import { BsChatSquareQuoteFill } from "react-icons/bs"; /* <BsChatSquareQuoteFill /> */
+import { FaUserGraduate } from "react-icons/fa6";
+import { BsChatSquareQuoteFill } from "react-icons/bs";
 import { testimonials } from "../data";
 
 export default function Testimonials() {
@@ -10,8 +10,8 @@ export default function Testimonials() {
         className="bg-gradient-to-b from-slate-600 to-slate-500 pt-10"
       >
         <div className="container px-5 py-10 mx-auto text-center">
-          <FaUserGraduate className="w-10 inline-block mb-4" size={40} />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-12 anta-regular">
+          <FaUserGraduate className="inline-block mb-4" size={40} />
+          <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-12 anta-regular underline">
             Omdömen
           </h1>
           <div className="flex flex-wrap m-4">

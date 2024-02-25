@@ -1,5 +1,6 @@
 export const projects = [
   {
+    id: 1,
     title: "Vite & React",
     subtitle: "Vite, React & TailwindCSS",
     description:
@@ -8,6 +9,7 @@ export const projects = [
     link: "https://github.com/hallstrom91/portfolio_v1",
   },
   {
+    id: 2,
     title: "React & Node.js",
     subtitle: "Frontend, Backend & Auth Projekt",
     description:
@@ -16,6 +18,7 @@ export const projects = [
     link: "https://github.com/hallstrom91/fwk23s-grupp2-project",
   },
   {
+    id: 3,
     title: "Node.js API",
     subtitle: "Node.js & React",
     description:
@@ -24,6 +27,7 @@ export const projects = [
     link: "https://github.com/hallstrom91/tmdb_project",
   },
   {
+    id: 4,
     title: "Vanilla-JS",
     subtitle: "JS Contactbook",
     description:
@@ -32,14 +36,16 @@ export const projects = [
     link: "https://github.com/hallstrom91/JavaScript-ContactBook",
   },
   {
+    id: 5,
     title: "Node.js Guestbook",
     subtitle: "Node.js, mySQL & Ejs",
     description:
       "Tidigare skolprojekt i Vanilla-JS, enkel gästbok där man kan registrea sig, logga in och skriva inlägg.",
-    image: "/images/MySQL.svg",
+    image: "/images/Node.svg",
     link: "https://github.com/hallstrom91/Login-Guestbook",
   },
   {
+    id: 6,
     title: "Python Project",
     subtitle: "Python Blockchain",
     description:
