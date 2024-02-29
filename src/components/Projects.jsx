@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaReact } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
 import { projects } from "../data.js";
@@ -6,6 +7,7 @@ import { MdOutlineFindInPage } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";
 
 export default function Projects() {
+  const { t } = useTranslation();
   return (
     <>
       <section
@@ -19,13 +21,10 @@ export default function Projects() {
               <SiVite className="mx-auto inline-block w-10 mb-4" size={40} />
             </div>
             <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white anta-regular underline">
-              Projekt
+              {t("project.title")}
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Utforska några av mina projekt genom att klicka på nedanstående
-              länkar. Dessutom finns ytterligare projekt tillgängliga på min
-              GitHub-profil för en mer omfattande överblick över min portfölj.
-              Där kan du följa min utvecklingsresa och ta del av mina projekt.
+              {t("project.description")}
             </p>
           </div>
           {/* Project-Grid-Layout */}

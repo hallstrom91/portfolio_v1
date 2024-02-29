@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "about": "profil",
+    "projects": "projekt",
+    "knowledge": "kunskaper",
+    "testimonials": "omdömen",
+    "contact": "kontakt"
+  }
+}

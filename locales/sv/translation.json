@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "about": "profil",
+    "projects": "projekt",
+    "knowledge": "kunskaper",
+    "testimonials": "omdömen",
+    "contact": "kontakt"
+  },
+  "about": {
+    "title": "Simon Hällström",
+    "subtitle": "Student",
+    "description": "Mitt namn är Simon Hällström Wänfelt, och jag är född samt uppvuxen i Piteå, beläget i Norrbottens län. Sedan 2016 har jag varit bosatt i Stockholm och för närvarande fördjupar jag min kompetens som Frontendutvecklare med fokus på webbsäkerhet vid Jensen YH i Kista. Jag tillhör FWK23S-klassen och förväntas avsluta min utbildning sommaren 2025. Mitt livslånga intresse för datorer har varit en drivkraft som nu leder mig mot en karriär inom ett område som jag anser vara både extremt fascinerande och intressant.",
+    "contactBtn": "Kontakt",
+    "resumeBtn": "Hämta CV"
+  },
+  "project": {
+    "title": "Projekt",
+    "description": "Utforska några av mina projekt genom att klicka på nedanstående länkar. Dessutom finns ytterligare projekt tillgängliga på min GitHub-profil för en mer omfattande överblick över min portfölj. Där kan du följa min utvecklingsresa och ta del av mina projekt."
+  },
+  "knowledge": {
+    "title": "",
+    "description": ""
+  },
+  "testimonials": {
+    "title": "",
+    "description": ""
+  },
+  "contact": {
+    "title": "",
+    "description": "",
+    "form": {
+      "name": "",
+      "email": "",
+      "message": "",
+      "submit": ""
+    }
+  },
+  "footer": {
+    "title": "",
+    "description": ""
+  }
+}

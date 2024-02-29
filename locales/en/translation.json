@@ -1,0 +1,45 @@
+{
+  "navbar": {
+    "about": "about",
+    "projects": "projects",
+    "knowledge": "skills",
+    "testimonials": "testimonials",
+    "contact": "contact"
+  },
+  "about": {
+    "title": "",
+    "description:": "",
+    "contactBtn": {
+      "en": ""
+    },
+    "resumeBtn": {
+      "en": ""
+    }
+  },
+  "projekt": {
+    "title": "",
+    "description": ""
+  },
+  "knowledge": {
+    "title": "",
+    "description": ""
+  },
+  "testimonials": {
+    "title": "",
+    "description": ""
+  },
+  "contact": {
+    "title": "",
+    "description": "",
+    "form": {
+      "name": "",
+      "email": "",
+      "message": "",
+      "submit": ""
+    }
+  },
+  "footer": {
+    "title": "",
+    "description": ""
+  }
+}

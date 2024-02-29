@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../css/Navbar.css";
 import { MdMarkEmailRead } from "react-icons/md";
 import { BsFillMenuButtonWideFill } from "react-icons/bs";
 import { FaWindowClose } from "react-icons/fa";
 
 export default function Navbar() {
+  const { t } = useTranslation();
   // Toggle hamburger menu at click
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -14,14 +16,14 @@ export default function Navbar() {
     <>
       {/* Responsive Layout  */}
       <div className="lg:hidden block absolute top-16 w-full left-0 right-0  transition z-50 rounded-b-md mt-1 bg-gradient-to-t from-slate-600 to-slate-900">
-        <ul className="text-center text-xl p-20">
+        <ul className="text-center text-xl p-20 uppercase">
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded anta-regular">
             <a
               href="#about"
               className="mr-5 hover:text-sky-400  navLink"
               onClick={handleClick}
             >
-              Profil
+              {t("navbar.about")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -30,7 +32,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              Projekt
+              {t("navbar.projects")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -39,7 +41,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              Kunskaper
+              {t("navbar.knowledge")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -48,7 +50,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              Omdömen
+              {t("navbar.testimonials")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -57,7 +59,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              Kontakt
+              {t("navbar.contact")}
             </a>
           </li>
         </ul>
@@ -81,13 +83,13 @@ export default function Navbar() {
           </div>
           <div className="lg:flex md:flex font-normal hidden">
             <div className="flex-10">
-              <ul className="flex gap-10 text-[18px]">
+              <ul className="flex gap-10 text-[18px] uppercase">
                 <li className="hover:text-slate-600 transition border-b-2 border-slate-800 hover:border-red-500 cursor-pointer">
                   <a
                     href="#projects"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    Projekt
+                    {t("navbar.projects")}
                   </a>
                 </li>
 
@@ -96,7 +98,7 @@ export default function Navbar() {
                     href="#knowledge"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    Kunskaper
+                    {t("navbar.knowledge")}
                   </a>
                 </li>
                 <li className="hover:text-slate-600 transition border-b-2 border-slate-800 hover:border-red-500 cursor-pointer">
@@ -104,7 +106,7 @@ export default function Navbar() {
                     href="#testimonials"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    Omdömen
+                    {t("navbar.testimonials")}
                   </a>
                 </li>
                 <li className="hover:text-slate-600 transition border-b-2 border-slate-800 hover:border-red-500 cursor-pointer">
@@ -112,7 +114,7 @@ export default function Navbar() {
                     href="#contact"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    Kontakt
+                    {t("navbar.contact")}
                   </a>
                 </li>
               </ul>
