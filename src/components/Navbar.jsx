@@ -25,7 +25,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400  navLink"
               onClick={handleClick}
             >
-              {t("navbar.about")}
+              {t("translation.navbar.about")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -34,7 +34,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              {t("navbar.projects")}
+              {t("translation.navbar.projects")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -43,7 +43,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              {t("navbar.knowledge")}
+              {t("translation.navbar.knowledge")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -52,7 +52,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              {t("navbar.testimonials")}
+              {t("translation.navbar.testimonials")}
             </a>
           </li>
           <li className="my-4 py-4 border-b border-slate-400 hover:bg-sky-900 hover:rounded">
@@ -61,7 +61,7 @@ export default function Navbar() {
               className="mr-5 hover:text-sky-400 navLink"
               onClick={handleClick}
             >
-              {t("navbar.contact")}
+              {t("translation.navbar.contact")}
             </a>
           </li>
         </ul>
@@ -91,7 +91,7 @@ export default function Navbar() {
                     href="#projects"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    {t("navbar.projects")}
+                    {t("translation.navbar.projects")}
                   </a>
                 </li>
 
@@ -100,7 +100,7 @@ export default function Navbar() {
                     href="#knowledge"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    {t("navbar.knowledge")}
+                    {t("translation.navbar.knowledge")}
                   </a>
                 </li>
                 <li className="hover:text-slate-600 transition border-b-2 border-slate-800 hover:border-red-500 cursor-pointer">
@@ -108,7 +108,7 @@ export default function Navbar() {
                     href="#testimonials"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    {t("navbar.testimonials")}
+                    {t("translation.navbar.testimonials")}
                   </a>
                 </li>
                 <li className="hover:text-slate-600 transition border-b-2 border-slate-800 hover:border-red-500 cursor-pointer">
@@ -116,7 +116,7 @@ export default function Navbar() {
                     href="#contact"
                     className="mr-2 hover:text-sky-400 navLink"
                   >
-                    {t("navbar.contact")}
+                    {t("translation.navbar.contact")}
                   </a>
                 </li>
               </ul>
