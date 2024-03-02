@@ -1,10 +1,13 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
+
 import Social from "./Social";
 import { PiGithubLogoThin } from "react-icons/pi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
 
@@ -99,19 +102,18 @@ export default function Contact() {
                 className="lg-w-full md:w-full flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 "
               >
                 <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font flex justify-center items-center anta-regular">
-                  Kontakt
+                  {t("translation.contact.title")}
                   <MdOutlineMarkEmailRead className="ml-1" />
                 </h2>
                 <p className="leading-relaxed mb-5 text-center">
-                  Har du frågor eller vill nå mig? Använd formuläret nedan för
-                  att skicka ett meddelande.
+                  {t("translation.contact.description")}
                 </p>
                 <div className="relative mb-4">
                   <label
                     htmlFor="name"
                     className="leading-7 text-sm text-white"
                   >
-                    Namn
+                    {t("translation.contact.form.name")}
                   </label>
                   <input
                     type="text"
@@ -126,7 +128,7 @@ export default function Contact() {
                     htmlFor="email"
                     className="leading-7 text-sm text-white"
                   >
-                    Email
+                    {t("translation.contact.form.email")}
                   </label>
                   <input
                     type="email"
@@ -141,7 +143,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="leading-7 text-sm text-white"
                   >
-                    Meddelande
+                    {t("translation.contact.form.message")}
                   </label>
                   <textarea
                     name="message"
@@ -154,7 +156,7 @@ export default function Contact() {
                   type="submit"
                   className="text-white bg-sky-950 border-0 py-2 px-6 focus:inline-none hover:bg-sky-600 rounded text-lg"
                 >
-                  Submit
+                  {t("translation.contact.form.submitBtn")}
                 </button>
                 <div className="flex justify-center pt-8 text-sky-300">
                   {stateMessage && <p>{stateMessage}</p>}

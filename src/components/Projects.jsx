@@ -1,13 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { FaReact } from "react-icons/fa";
-import { SiVite } from "react-icons/si";
-import { projects } from "../data.js";
+
 import { MdOutlineFindInPage } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";
+import { FaReact } from "react-icons/fa";
+import { SiVite } from "react-icons/si";
 
 export default function Projects() {
   const { t } = useTranslation();
+  const projects = t("data.projects", { returnObjects: true });
+  console.log(projects);
+
   return (
     <>
       <section
@@ -21,10 +24,10 @@ export default function Projects() {
               <SiVite className="mx-auto inline-block w-10 mb-4" size={40} />
             </div>
             <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white anta-regular underline">
-              {t("project.title")}
+              {t("translation.project.title")}
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              {t("project.description")}
+              {t("translation.project.description")}
             </p>
           </div>
           {/* Project-Grid-Layout */}

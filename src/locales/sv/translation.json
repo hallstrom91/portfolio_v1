@@ -18,25 +18,20 @@
     "description": "Utforska några av mina projekt genom att klicka på nedanstående länkar. Dessutom finns ytterligare projekt tillgängliga på min GitHub-profil för en mer omfattande överblick över min portfölj. Där kan du följa min utvecklingsresa och ta del av mina projekt."
   },
   "knowledge": {
-    "title": "",
-    "description": ""
+    "title": "Kunskaper",
+    "description": "Under min pågående utbildning har jag absorberat flera nya programmeringsspråk och ramverk. För att fördjupa min kompetens och sträva efter excellens inom mitt område har jag engagerat mig i självstudier för att behärska ytterligare ramverk på min fritid. Trots att jag formellt studerar för att bli Frontend-utvecklare har jag upptäckt en särskild passion för Backend-utveckling med Node.js. Denna insikt har utvidgat min tekniska horisont och bidrar till en mångsidig kompetensprofil. Att trivas i båda världarna av Frontend och Backend stärker min förmåga att skapa integrerade och effektiva lösningar inom webbutveckling."
   },
   "testimonials": {
-    "title": "",
-    "description": ""
+    "title": "Omdömen"
   },
   "contact": {
-    "title": "",
-    "description": "",
+    "title": "Kontakt",
+    "description": "Har du frågor eller vill nå mig? Använd formuläret nedan för att skicka ett meddelande.",
     "form": {
-      "name": "",
-      "email": "",
-      "message": "",
-      "submit": ""
+      "name": "Namn:",
+      "email": "Email:",
+      "message": "Meddelande:",
+      "submitBtn": "Skicka"
     }
-  },
-  "footer": {
-    "title": "",
-    "description": ""
   }
 }

@@ -13,6 +13,11 @@ app.use(helmet());
 app.use(express.static(path.join(__dirname, "dist")));
 
 app.use("/assets", express.static(path.join(__dirname, "dist", "assets")));
+app.use("/images", express.static(path.join(__dirname, "dist", "images")));
+app.use(
+  "/downloads",
+  express.static(path.join(__dirname, "dist", "downloads"))
+);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));

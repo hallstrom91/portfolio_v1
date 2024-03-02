@@ -1,8 +1,15 @@
+import React from "react";
+
+import { useTranslation } from "react-i18next";
+import { testimonials } from "../locales-data/sv/dataSV.json";
+
 import { FaUserGraduate } from "react-icons/fa6";
 import { BsChatSquareQuoteFill } from "react-icons/bs";
-import { testimonials } from "../data";
 
 export default function Testimonials() {
+  const { t } = useTranslation();
+  const testimonials = t("data.testimonials", { returnObjects: true });
+  console.log(testimonials);
   return (
     <>
       <section
@@ -12,7 +19,7 @@ export default function Testimonials() {
         <div className="container px-5 py-10 mx-auto text-center">
           <FaUserGraduate className="inline-block mb-4" size={40} />
           <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-12 anta-regular underline">
-            Omdömen
+            {t("translation.testimonials.title")}
           </h1>
           <div className="flex flex-wrap m-4">
             {testimonials.map((testimonial) => (

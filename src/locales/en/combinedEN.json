@@ -1,0 +1,119 @@
+{
+  "translation": {
+    "navbar": {
+      "about": "about",
+      "projects": "projects",
+      "knowledge": "skills",
+      "testimonials": "testimonials",
+      "contact": "contact"
+    },
+    "about": {
+      "title": "Simon Hällström",
+      "subtitle": "Student",
+      "description": "My name is Simon Hällström Wänfelt, and I was born and raised in Piteå, located in Norrbotten County. Since 2016, I have been living in Stockholm, and currently, I am deepening my skills as a Frontend Developer with a focus on web security at Jensen YH in Kista. I belong to the FWK23S class and am expected to complete my education in the summer of 2025. My lifelong interest in computers has been a driving force that now guides me towards a career in an area that I find extremely fascinating and interesting.",
+      "contactBtn": "Contact",
+      "resumeBtn": "Download CV"
+    },
+    "project": {
+      "title": "Projects",
+      "description": "Explore some of my projects by clicking on the links below. Additionally, there are more projects available on my GitHub profile for a more comprehensive overview of my portfolio. There, you can follow my development journey and access my projects."
+    },
+    "knowledge": {
+      "title": "Skills",
+      "description": "During my ongoing education, I have absorbed several new programming languages and frameworks. To deepen my skills and strive for excellence in my field, I have engaged in self-studies to master additional frameworks in my free time. Although formally studying to become a Frontend Developer, I have discovered a particular passion for Backend development with Node.js. This insight has broadened my technical horizon and contributes to a versatile skill profile. Thriving in both the worlds of Frontend and Backend strengthens my ability to create integrated and efficient solutions in web development."
+    },
+    "testimonials": {
+      "title": "Testimonials"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Have questions or want to reach me? Use the form below to send a message.",
+      "form": {
+        "name": "Name:",
+        "email": "Email:",
+        "message": "Message:",
+        "submitBtn": "Send"
+      }
+    }
+  },
+  "data": {
+    "projects": [
+      {
+        "id": 1,
+        "title": "Vite & React",
+        "subtitle": "Vite, React & TailwindCSS",
+        "description": "Portfolio project created with Vite and React, along with Tailwind CSS for styling.",
+        "image": "/images/Vite.svg",
+        "link": "https://github.com/hallstrom91/portfolio_v1"
+      },
+      {
+        "id": 2,
+        "title": "React & Node.js",
+        "subtitle": "Frontend, Backend & Auth Project",
+        "description": "Simple school project in React with login functionality. Frontend in React, Node.js for Backend & Auth server with JWT.",
+        "image": "/images/React.svg",
+        "link": "https://github.com/hallstrom91/fwk23s-grupp2-project"
+      },
+      {
+        "id": 3,
+        "title": "Node.js API",
+        "subtitle": "Node.js & React",
+        "description": "TMDB API project where you can find the most popular movies and TV shows, as well as search for movies, series, actors, and companies.",
+        "image": "/images/Node.svg",
+        "link": "https://github.com/hallstrom91/tmdb_project"
+      },
+      {
+        "id": 4,
+        "title": "Vanilla-JS",
+        "subtitle": "JS Contactbook",
+        "description": "Previous school project in Vanilla JS, a simple contact book where you can save and delete contacts dynamically.",
+        "image": "/images/JavaScript.svg",
+        "link": "https://github.com/hallstrom91/JavaScript-ContactBook"
+      },
+      {
+        "id": 5,
+        "title": "Node.js Guestbook",
+        "subtitle": "Node.js, mySQL & Ejs",
+        "description": "Previous school project in Vanilla JS, a simple guestbook where you can register, log in, and write posts.",
+        "image": "/images/Node.svg",
+        "link": "https://github.com/hallstrom91/Login-Guestbook"
+      },
+      {
+        "id": 6,
+        "title": "Python Project",
+        "subtitle": "Python Blockchain",
+        "description": "Simple blockchain written in Python. Created to develop my skills in Python and blockchains.",
+        "image": "/images/Python.svg",
+        "link": "https://github.com/hallstrom91/python_blockchain"
+      }
+    ],
+    "skills": [
+      "HTML & CSS",
+      "JavaScript",
+      "React",
+      "Vite",
+      "Vue",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Node.js",
+      "mySQL",
+      "Adobe Photoshop"
+    ],
+    "testimonials": [
+      {
+        "id": 1,
+        "quote": "Well done with refactoring the code into smaller functions. The code is truly well-commented and structured, making it easier to read.",
+        "name": "Sibar",
+        "company": "Jensen YH - Teacher FWK23S - Basic JavaScript",
+        "link": "#"
+      },
+      {
+        "id": 2,
+        "quote": "Good and well-commented with several extra tasks implemented like middleware, DELETE, etc.",
+        "name": "Holger",
+        "company": "Jensen YH - Teacher FWK23S - Frontend Dev - Server (Node.js / API)",
+        "link": "#"
+      }
+    ]
+  }
+}
