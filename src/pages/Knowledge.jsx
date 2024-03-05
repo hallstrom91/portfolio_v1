@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import "../css/Fonts.css";
 
 import { PiSealCheckFill } from "react-icons/pi";
 import { GiMicrochip } from "react-icons/gi";

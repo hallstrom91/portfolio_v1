@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import "../css/Fonts.css";
 
 import { MdOutlineFindInPage } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";

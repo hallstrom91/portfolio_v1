@@ -1,7 +1,6 @@
 import React from "react";
-
 import { useTranslation } from "react-i18next";
-import { testimonials } from "../locales-data/sv/dataSV.json";
+import "../css/Fonts.css";
 
 import { FaUserGraduate } from "react-icons/fa6";
 import { BsChatSquareQuoteFill } from "react-icons/bs";

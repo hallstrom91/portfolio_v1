@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import "../css/Fonts.css";
 
 export default function About() {
   const { t } = useTranslation();

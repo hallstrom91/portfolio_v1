@@ -1,10 +1,10 @@
 import React from "react";
 
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Projects from "./components/Projects";
-import Knowledge from "./components/Knowledge";
-import Testimonials from "./components/Testimonials";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
+import Knowledge from "./pages/Knowledge";
+import Testimonials from "./pages/Testimonials";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";

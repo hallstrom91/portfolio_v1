@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import combinedSV from "./src/locales/sv/combinedSV.json";
-import combinedEN from "./src/locales/en/combinedEN.json";
+import combinedSV from "./src/locales/sv/translationSV.json";
+import combinedEN from "./src/locales/en/translationEN.json";
 
 const resources = {
   sv: { translation: combinedSV },

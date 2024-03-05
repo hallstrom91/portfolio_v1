@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
+import "../css/Fonts.css";
 
-import Social from "./Social";
+import PdfViewer from "../components/PdfViewer";
+import Social from "../components/Social";
 import { PiGithubLogoThin } from "react-icons/pi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 
@@ -164,6 +166,9 @@ export default function Contact() {
               </form>
             </div>
           </div>
+          {/*           <div id="test_div" className="">
+            <PdfViewer />
+          </div> */}
         </div>
       </div>
     </section>

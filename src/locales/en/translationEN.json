@@ -34,6 +34,11 @@
         "message": "Message:",
         "submitBtn": "Send"
       }
+    },
+    "languageBtn": {
+      "selector": "Language",
+      "swedish": "Swedish",
+      "english": "English"
     }
   },
   "data": {

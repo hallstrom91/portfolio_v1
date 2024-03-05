@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/Fonts.css";
 import { IoLogoGithub } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
 
