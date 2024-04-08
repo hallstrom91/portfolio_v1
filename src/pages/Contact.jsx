@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+// translation
 import { useTranslation } from "react-i18next";
-import "../css/Fonts.css";
 
-import PdfViewer from "../components/PdfViewer";
 import Social from "../components/Social";
 import { PiGithubLogoThin } from "react-icons/pi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
@@ -12,6 +11,12 @@ export default function Contact() {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
+
+  const SERVICE = import.meta.env.VITE_EMAILJS_SERVICE;
+  const TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE;
+  const MYKEY = import.meta.env.VITE_EMAILJS_MYKEY;
+
+  console.log("emailjs", SERVICE, TEMPLATE, MYKEY);
 
   function sendEmail(e) {
     e.preventDefault();
@@ -67,8 +72,8 @@ export default function Contact() {
     setIsSubmitting(true);
 
     emailjs
-      .sendForm("service_q35q8gn", "template_irv9sbk", e.target, {
-        publicKey: "KLN7PlV1VP66e_pur",
+      .sendForm(SERVICE, TEMPLATE, e.target, {
+        publicKey: MYKEY,
       })
       .then(
         () => {
@@ -92,7 +97,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-slate-500 to-slate-400"
+      className="bg-gradient-to-b from-slate-600 to-slate-500 text-white"
     >
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap justify-center align-middle">
         <div className="lg:w-full md:w-full bg-opacity-0 rounded-xl overflow-hidden flex items-center justify-center">

@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "../css/Fonts.css";
-
+// icons
 import { PiSealCheckFill } from "react-icons/pi";
 import { GiMicrochip } from "react-icons/gi";
 
@@ -16,7 +15,7 @@ export default function Knowledge() {
         className="bg-gradient-to-b from-slate-700 to-slate-600 pt pb"
       >
         <div className="container px-5 py-10 mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 text-white">
             <GiMicrochip className="w-10 inline-block mb-4" size={40} />
             <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4 anta-regular underline">
               {t("translation.knowledge.title")}

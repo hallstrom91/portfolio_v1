@@ -5,6 +5,7 @@ import LanguageBtn from "./LanguageBtn";
 import "../css/Fonts.css";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -12,10 +13,29 @@ export default function Footer() {
   };
   return (
     <>
-      <footer className="bg-gradient-to-b from-slate-600 to-slate-900 text-white text-center border-t-2 border-black overflow-x-hidden">
+      <footer className="bg-gradient-to-b from-slate-600 to-slate-900 text-white border-t-2 border-white p-5">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="text-center">
+            <Social />
+            <p></p>
+          </div>
+          <div className="text-center">
+            {year} &copy; Simon Hällström Wänfelt
+          </div>
+          <div className="text-center flex h-full">
+            <LanguageBtn />
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+{
+  /*       <footer className="bg-gradient-to-b from-slate-600 to-slate-900 text-white text-center border-t-2 border-white overflow-x-hidden">
         <div className="flex flex-col md:flex-row w-full pt-2 justify-end p-4">
           <div className="flex justify-end items-end ">
-            {/* Language Selector Dropdown Button */}
+         
             <LanguageBtn />
           </div>
         </div>
@@ -28,7 +48,5 @@ export default function Footer() {
             <p>shallstrom91@gmail.com</p>
           </div>
         </div>
-      </footer>
-    </>
-  );
+      </footer> */
 }

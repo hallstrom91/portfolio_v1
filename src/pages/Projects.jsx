@@ -1,7 +1,7 @@
 import React from "react";
+// translation
 import { useTranslation } from "react-i18next";
-import "../css/Fonts.css";
-
+// icons
 import { MdOutlineFindInPage } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";
 import { FaReact } from "react-icons/fa";

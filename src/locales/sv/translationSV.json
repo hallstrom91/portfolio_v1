@@ -36,9 +36,17 @@
       }
     },
     "languageBtn": {
-      "selector": "Språk",
+      "selector": "Språk (SV)",
       "swedish": "Svenska",
       "english": "Engelska"
+    },
+    "pdfviewer": {
+      "next": "Nästa",
+      "previous": "Föregående",
+      "currentpage": {
+        "page": "Sida",
+        "page-of": "av"
+      }
     }
   },
   "data": {
@@ -61,11 +69,11 @@
       },
       {
         "id": 3,
-        "title": "Node.js API",
+        "title": "Node.js API & React ",
         "subtitle": "Node.js & React",
-        "description": "TMDB-API Projekt där man kan ta reda på mest populära filmerna och tv-serierna samt söka efter filmer, serier, skådespelare och företag.",
+        "description": "Projektet omfattar en webbshop med ett fullt fungerande kundkorgssystem, inloggning, registrering samt möjligheten att spara och återställa kundkorgar.",
         "image": "/images/Node.svg",
-        "link": "https://github.com/hallstrom91/tmdb_project"
+        "link": "https://github.com/hallstrom91/ecommerce_project"
       },
       {
         "id": 4,
@@ -77,16 +85,16 @@
       },
       {
         "id": 5,
-        "title": "Node.js Guestbook",
-        "subtitle": "Node.js, mySQL & Ejs",
-        "description": "Tidigare skolprojekt i Vanilla-JS, enkel gästbok där man kan registrea sig, logga in och skriva inlägg.",
-        "image": "/images/Node.svg",
-        "link": "https://github.com/hallstrom91/Login-Guestbook"
+        "title": "React & MealDB API",
+        "subtitle": "React FoodApp",
+        "description": "Det här skolprojektet utvecklades med Vite+React och React-Bootstrap. Det använder The MealDB API för att hämta data relaterad till måltider.",
+        "image": "/images/React.svg",
+        "link": "https://github.com/hallstrom91/themealdb_api_project"
       },
       {
         "id": 6,
         "title": "Python Project",
-        "subtitle": "Python Blockchain",
+        "subtitle": "Blockchain - Under utveckling",
         "description": "Enklare blockkedja skriven i Python. Skapa för att utveckla mina färdigheter inom Python och blockkedjor.",
         "image": "/images/Python.svg",
         "link": "https://github.com/hallstrom91/python_blockchain"
@@ -97,28 +105,12 @@
       "JavaScript",
       "React",
       "Vite",
-      "Vue",
+      "Python",
       "Bootstrap",
       "Tailwind CSS",
       "Node.js",
       "mySQL",
       "Adobe Photoshop"
-    ],
-    "testimonials": [
-      {
-        "id": 1,
-        "quote": "Bra jobbat med att refaktorera koden till mindre funktioner. Koden är verkligen väl kommenterad och strukturerad, vilket gör koden enklare att läsa. ",
-        "name": "Sibar",
-        "company": "Jensen YH - Lärare FWK23S - Grundläggande JavaScript",
-        "link": "#"
-      },
-      {
-        "id": 2,
-        "quote": "Bra och välkommenterat med flera extrauppgifter implementerade som middleware, DELETE osv. ",
-        "name": "Holger",
-        "company": "Jensen YH - Lärare FWK23S - Frontendutv - Server (Node.js / API)",
-        "link": "#"
-      }
     ]
   }
 }

@@ -36,9 +36,17 @@
       }
     },
     "languageBtn": {
-      "selector": "Language",
+      "selector": "Language (ENG)",
       "swedish": "Swedish",
       "english": "English"
+    },
+    "pdfviewer": {
+      "next": "Next",
+      "previous": "Previous",
+      "currentpage": {
+        "page": "Page",
+        "page-of": "of"
+      }
     }
   },
   "data": {
@@ -61,11 +69,11 @@
       },
       {
         "id": 3,
-        "title": "Node.js API",
+        "title": "Node.js API & React",
         "subtitle": "Node.js & React",
-        "description": "TMDB API project where you can find the most popular movies and TV shows, as well as search for movies, series, actors, and companies.",
+        "description": "The project features an e-commerce website with a fully functional shopping cart system, login, registration, and the ability to save and restore shopping carts.",
         "image": "/images/Node.svg",
-        "link": "https://github.com/hallstrom91/tmdb_project"
+        "link": "https://github.com/hallstrom91/ecommerce_project"
       },
       {
         "id": 4,
@@ -77,16 +85,16 @@
       },
       {
         "id": 5,
-        "title": "Node.js Guestbook",
+        "title": "React & MealDB API",
         "subtitle": "Node.js, mySQL & Ejs",
-        "description": "Previous school project in Vanilla JS, a simple guestbook where you can register, log in, and write posts.",
-        "image": "/images/Node.svg",
-        "link": "https://github.com/hallstrom91/Login-Guestbook"
+        "description": "This school project was developed using Vite+React and React-Bootstrap. It utilizes The MealDB API to fetch meal-related data",
+        "image": "/images/React.svg",
+        "link": "https://github.com/hallstrom91/themealdb_api_project"
       },
       {
         "id": 6,
         "title": "Python Project",
-        "subtitle": "Python Blockchain",
+        "subtitle": "Python Blockchain - In progress",
         "description": "Simple blockchain written in Python. Created to develop my skills in Python and blockchains.",
         "image": "/images/Python.svg",
         "link": "https://github.com/hallstrom91/python_blockchain"
@@ -97,28 +105,12 @@
       "JavaScript",
       "React",
       "Vite",
-      "Vue",
+      "Python",
       "Bootstrap",
       "Tailwind CSS",
       "Node.js",
       "mySQL",
       "Adobe Photoshop"
-    ],
-    "testimonials": [
-      {
-        "id": 1,
-        "quote": "Well done with refactoring the code into smaller functions. The code is truly well-commented and structured, making it easier to read.",
-        "name": "Sibar",
-        "company": "Jensen YH - Teacher FWK23S - Basic JavaScript",
-        "link": "#"
-      },
-      {
-        "id": 2,
-        "quote": "Good and well-commented with several extra tasks implemented like middleware, DELETE, etc.",
-        "name": "Holger",
-        "company": "Jensen YH - Teacher FWK23S - Frontend Dev - Server (Node.js / API)",
-        "link": "#"
-      }
     ]
   }
 }
