@@ -7,7 +7,7 @@ import styles from "@css/Knowledge.module.css";
 export default function Knowledge() {
   const { t } = useTranslation();
   const skills = t("data.skills", { returnObjects: true });
-  console.log(skills);
+
   return (
     <>
       <section

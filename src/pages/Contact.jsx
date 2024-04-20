@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Social from "@components/Social";
 // translation
@@ -13,12 +13,25 @@ export default function Contact() {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
+  const [emailEnvs, setEmailEnvs] = useState({});
 
-  const SERVICE = import.meta.env.VITE_EMAILJS_SERVICE;
+  /*   const SERVICE = import.meta.env.VITE_EMAILJS_SERVICE;
   const TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE;
-  const MYKEY = import.meta.env.VITE_EMAILJS_MYKEY;
+  const MYKEY = import.meta.env.VITE_EMAILJS_MYKEY; */
 
-  console.log("emailjs", SERVICE, TEMPLATE, MYKEY);
+  // get env-vars from nodejs
+  useEffect(() => {
+    fetch("/email-vars")
+      .then((response) => response.json())
+      .then((data) => {
+        setEmailEnvs(data.emailVars);
+      })
+      .catch((error) => {
+        console.error("Error fetching email variables", error);
+      });
+  }, []);
+
+  const { SERVICE, TEMPLATE, MYKEY } = emailEnvs;
 
   function sendEmail(e) {
     e.preventDefault();

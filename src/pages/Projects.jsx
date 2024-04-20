@@ -9,7 +9,6 @@ import { SiVite } from "react-icons/si";
 export default function Projects() {
   const { t } = useTranslation();
   const projects = t("data.projects", { returnObjects: true });
-  console.log(projects);
 
   return (
     <>

@@ -38,13 +38,13 @@ export default function About() {
             <div className="flex justify-center mb-8">
               {/* about resumeBtn */}
               <div className="px-2">
-                <button
+                <a
                   href="/downloads/resume_sh_kjsportfolio.pdf"
                   download="resume.pdf"
                   className="inline-flex text-black bg-blue-300 border-0 py-2 px-6 focus:outline-none md:hover:bg-cyan-600 rounded text-md"
                 >
                   {t("translation.about.resumeBtn")}
-                </button>
+                </a>
               </div>
             </div>
           </div>
