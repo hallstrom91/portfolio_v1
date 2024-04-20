@@ -12,28 +12,51 @@ export default function Switch() {
     <>
       <Navbar />
       <Routes>
-        {/* MAIN-APP-LAYOUT */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Element name="about">
-                <About />
-              </Element>
-              <Element name="projects">
-                <Projects />
-              </Element>
-              <Element name="knowledge">
-                <Knowledge />
-              </Element>
-              <Element name="contact">
-                <Contact />
-              </Element>
-            </>
-          }
-        />
+        <Route path="/" element={<MainAppLayout />} />
       </Routes>
       <Footer />
     </>
   );
+}
+
+function MainAppLayout() {
+  return (
+    <>
+      {/* MAIN-APP-LAYOUT */}
+      <Element name="about">
+        <About />
+      </Element>
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="knowledge">
+        <Knowledge />
+      </Element>
+      <Element name="contact">
+        <Contact />
+      </Element>
+    </>
+  );
+}
+
+{
+  /* <Route
+  path="/app"
+  element={
+    <>
+      <Element path="" name="about">
+        <About />
+      </Element>
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="knowledge">
+        <Knowledge />
+      </Element>
+      <Element name="contact">
+        <Contact />
+      </Element>
+    </>
+  }
+/> */
 }

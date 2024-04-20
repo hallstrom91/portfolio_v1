@@ -32,6 +32,7 @@ export default function Contact() {
   }, []);
 
   const { SERVICE, TEMPLATE, MYKEY } = emailEnvs;
+  console.log("emailenvs", emailEnvs);
 
   function sendEmail(e) {
     e.preventDefault();

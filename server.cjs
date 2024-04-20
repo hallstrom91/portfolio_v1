@@ -1,7 +1,7 @@
-import express from "express";
-import path from "path";
-import dotenv from "dotenv";
-import helmet from "helmet";
+const express = require("express");
+const path = require("path");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
 
 dotenv.config();
 
@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(helmet());
+
 // path
 app.use(express.static(path.join(__dirname, "dist")));
 
@@ -21,7 +22,11 @@ app.use(
 );
 
 // host dist
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
+app.get("/app/*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
@@ -33,6 +38,7 @@ app.get("/email-vars", (req, res) => {
     myKey: process.env.EMAILJS_MYKEY,
   };
   res.json({ emailVars });
+  console.log("emailVars", emailVars);
 });
 
 app.listen(PORT, () => {

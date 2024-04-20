@@ -17,7 +17,7 @@ function App() {
     const savedLanguage = Cookies.get("language");
 
     if (savedLanguage) {
-      navigate("/app/");
+      navigate("/app");
     }
   }, []);
 
