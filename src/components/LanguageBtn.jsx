@@ -1,19 +1,18 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "../css/Fonts.css";
 import { GrLanguage } from "react-icons/gr"; /* GrLanguage */
 import { FaGlobeEurope } from "react-icons/fa"; /* FaGlobeEurope */
+import Cookies from "js-cookie";
 
 export default function LanguageBtn() {
   /* dropdown menu  */
   const [isOpen, setIsOpen] = useState(false);
 
-  /* i18n & language */
+  /* i18n language, save in localstorage  */
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    Cookies.set("language", lng, { expires: 7 });
   };
 
   /* auto close language dropdown menu */
@@ -34,7 +33,7 @@ export default function LanguageBtn() {
 
   return (
     <>
-      <div className="relative inline-block text-center bg-blue-300 hover:bg-blue-500 text-black rounded-full items-center justify-center p-1 px-4">
+      <div className="relative inline-block text-center bg-neutral-200 md:hover:bg-cyan-600 text-black rounded-md items-center justify-center py-1 px-2">
         <div>
           <button
             type="button"
@@ -46,35 +45,39 @@ export default function LanguageBtn() {
           >
             {/* LANGUAGE SELECTOR GLOBE ICON */}
             <FaGlobeEurope size={20} />
-            <span className="pl-1">
+            <span className="pl-2 py-1">
               {t("translation.languageBtn.selector")}
             </span>
           </button>
         </div>
         {isOpen && (
-          <div className="origin-top-left absolute left-1 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 justify-center align-middle">
+          <div className="origin-top-left absolute left-1 mt-2 rounded-md shadow-xl drop-shadow-lg bg-white ring-1 ring-black ring-opacity-5 justify-start align-middle">
             <div
-              className="py-1"
+              className=""
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="language-menu"
             >
               {/* LANGUAGE BUTTON SELECTOR - SWEDISH */}
-              <button
-                onClick={() => changeLanguage("sv")}
-                className="block px-4 py-2 text-sm text-black hover:bg-sky-300"
-                role="language"
-              >
-                {t("translation.languageBtn.swedish")}
-              </button>
+              <div className="w-[6em] hover:font-bold">
+                <button
+                  onClick={() => changeLanguage("sv")}
+                  className="flex px-1 py-2 text-sm text-black"
+                  role="language"
+                >
+                  {t("translation.languageBtn.swedish")}
+                </button>
+              </div>
               {/* LANGUAGE BUTTON SELECTOR - ENGLISH */}
-              <button
-                onClick={() => changeLanguage("en")}
-                className="block px-4 py-2 text-sm text-black hover:bg-sky-300"
-                role="language"
-              >
-                {t("translation.languageBtn.english")}
-              </button>
+              <div className="w-[6em] hover:font-bold">
+                <button
+                  onClick={() => changeLanguage("en")}
+                  className="flex px-1 py-2 text-sm text-black"
+                  role="language"
+                >
+                  {t("translation.languageBtn.english")}
+                </button>
+              </div>
             </div>
           </div>
         )}

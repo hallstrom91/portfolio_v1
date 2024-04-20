@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Protest+Revolution&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anta&family=Fredoka:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
 
 .protest-Revolution {
   font-family: "Protest Revolution", sans-serif;
@@ -16,4 +19,59 @@
   font-family: "Anta", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comfortaa-navtext {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bagel-fat-navtext {
+  font-family: "Bagel Fat One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* styling for body Intro page */
+
+.intro {
+  background-image: url("/images/starfield2.png");
+  background-size: cover;
+  -webkit-animation: journey 50s;
+  animation: journey 50s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes journey {
+  from {
+    background-position: 0% 0%;
+    background-size: 1500px;
+  }
+  to {
+    background-position: 0% 100%;
+    background-size: 3500px;
+  }
+}
+
+@keyframes journey {
+  from {
+    background-position: 0% 0%;
+    background-size: 1500px;
+  }
+  to {
+    background-position: 0% 100%;
+    background-size: 3500px;
+  }
 }

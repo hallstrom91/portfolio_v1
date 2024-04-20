@@ -10,13 +10,13 @@
     "about": {
       "title": "Simon Hällström",
       "subtitle": "Student",
-      "description": "Mitt namn är Simon Hällström Wänfelt, och jag är född samt uppvuxen i Piteå, beläget i Norrbottens län. Sedan 2016 har jag varit bosatt i Stockholm och för närvarande fördjupar jag min kompetens som Frontendutvecklare med fokus på webbsäkerhet vid Jensen YH i Kista. Jag tillhör FWK23S-klassen och förväntas avsluta min utbildning sommaren 2025. Mitt livslånga intresse för datorer har varit en drivkraft som nu leder mig mot en karriär inom ett område som jag anser vara både extremt fascinerande och intressant.",
+      "description": "Jag är född och uppvuxen i Piteå, Norrbottens län. Sedan 2016 har jag bott i Stockholm och för närvarande fördjupar jag min kompetens som Frontendutvecklare med fokus på webbsäkerhet vid Jensen Yrkeshögskola i Kista. Tillhörande FWK23S-klassen förväntas jag avsluta min utbildning sommaren 2025. Mitt livslånga intresse för datorer har varit en drivkraft som nu leder mig mot en karriär inom ett område som jag anser vara både extremt fascinerande och intressant. Jag söker en praktikplats från hösten 2024 under en period av sex månader för att ytterligare fördjupa mina kunskaper och få praktisk erfarenhet.",
       "contactBtn": "Kontakt",
       "resumeBtn": "Hämta CV"
     },
     "project": {
       "title": "Projekt",
-      "description": "Utforska några av mina projekt genom att klicka på nedanstående länkar. Dessutom finns ytterligare projekt tillgängliga på min GitHub-profil för en mer omfattande överblick över min portfölj. Där kan du följa min utvecklingsresa och ta del av mina projekt."
+      "description": "Utforska några av mina projekt genom att klicka på nedanstående länkar. Dessutom finns ytterligare projekt tillgängliga på min GitHub-profil för en mer omfattande överblick över min portfölj. Där kan du följa min utvecklingsresa och ta del av mina projekt, observera att flera av mina projekt är pågående och jag arbetar på dessa i mån av tid."
     },
     "knowledge": {
       "title": "Kunskaper",
@@ -32,12 +32,13 @@
         "name": "Namn:",
         "email": "Email:",
         "message": "Meddelande:",
-        "submitBtn": "Skicka"
+        "submitBtn": "Skicka",
+        "clearBtn": "Rensa"
       }
     },
     "languageBtn": {
-      "selector": "Språk (SV)",
-      "swedish": "Svenska",
+      "selector": "Språk",
+      "swedish": "Svenska ✓",
       "english": "Engelska"
     },
     "pdfviewer": {

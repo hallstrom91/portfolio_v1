@@ -1,8 +1,8 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 // icons
 import { PiSealCheckFill } from "react-icons/pi";
 import { GiMicrochip } from "react-icons/gi";
+import styles from "@css/Knowledge.module.css";
 
 export default function Knowledge() {
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ export default function Knowledge() {
     <>
       <section
         id="knowledge"
-        className="bg-gradient-to-b from-slate-700 to-slate-600 pt pb"
+        className="bg-gradient-to-b from-slate-700 to-slate-600 pb-10"
       >
         <div className="container px-5 py-10 mx-auto">
           <div className="text-center mb-20 text-white">
@@ -24,20 +24,22 @@ export default function Knowledge() {
               {t("translation.knowledge.description")}
             </p>
           </div>
-          <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-            {skills.map((skill) => (
-              <div key={skill} className="p-2 sm:w-1/2 w-full">
-                <div className="rounded-xl flex p-4 h-full items-center bg-gradient-to-b from-slate-400 to-slate-800 bg-opacity-40">
-                  <PiSealCheckFill
-                    className="text-green-300  flex-shrink-0 mr-4"
-                    size={25}
-                  />
-                  <span className="title-font font-medium text-white">
-                    {skill}
-                  </span>
+          <div
+            className={`${styles.backgroundSplashWhite} bg-cyan-900 mx-auto lg:w-[50%] rounded-2xl justify-center shadow-lg`}
+          >
+            <div className="flex flex-wrap lg:w-full sm:mb-2 backdrop-blur-sm rounded-2xl p-14 shadow-lg">
+              {skills.map((skill) => (
+                <div key={skill} className="p-2 sm:w-1/2 w-full">
+                  <div className="rounded-lg flex p-3  h-full items-center bg-gradient-to-b from-neutral-500 to-neutral-900">
+                    <PiSealCheckFill
+                      className="text-green-300  flex-shrink-0 mr-4"
+                      size={25}
+                    />
+                    <span className="font-medium text-white">{skill}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

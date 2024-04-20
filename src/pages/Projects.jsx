@@ -1,4 +1,3 @@
-import React from "react";
 // translation
 import { useTranslation } from "react-i18next";
 // icons
@@ -31,10 +30,11 @@ export default function Projects() {
               {t("translation.project.description")}
             </p>
           </div>
+
           {/* Project-Grid-Layout */}
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap m-2">
             {projects.map((project) => (
-              <div key={project.id} className="sm:w-1/2 w-100 p-4">
+              <div key={project.id} className="sm:w-1/2 w-100 px-4">
                 {/* Project-External-Links */}
                 <a
                   href={project.link}
@@ -50,12 +50,12 @@ export default function Projects() {
                       src={project.image}
                     />
                     {/* Project-Details */}
-                    <div className="px-8 py-8  relative z-10 w-full border-4 border-gray-900 bg-gray-700 bg-opacity-75 opacity-90 lg:opacity-0 lg:hover:opacity-100 rounded-xl">
+                    <div className="p-[2rem] relative z-10 w-full h-96 border-4 border-gray-900 bg-gray-700 bg-opacity-75 opacity-90 lg:opacity-0 lg:hover:opacity-100 rounded-xl">
                       {/* Title */}
-                      <h1 className="title-font text-lg font-medium text-white mb-3">
+                      <h1 className="text-lg font-medium text-white mb-3">
                         {project.title}
                       </h1>
-                      <h2 className="tracking-widest text-sm title-font font-medium text-white mb-1 italic">
+                      <h2 className="tracking-widest text-sm font-medium text-white mb-1 italic">
                         {/* Subtitle */}
                         {project.subtitle}
                       </h2>

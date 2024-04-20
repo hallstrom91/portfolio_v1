@@ -10,13 +10,13 @@
     "about": {
       "title": "Simon Hällström",
       "subtitle": "Student",
-      "description": "My name is Simon Hällström Wänfelt, and I was born and raised in Piteå, located in Norrbotten County. Since 2016, I have been living in Stockholm, and currently, I am deepening my skills as a Frontend Developer with a focus on web security at Jensen YH in Kista. I belong to the FWK23S class and am expected to complete my education in the summer of 2025. My lifelong interest in computers has been a driving force that now guides me towards a career in an area that I find extremely fascinating and interesting.",
+      "description": "I was born and raised in Piteå, Norrbotten County. Since 2016, I have been living in Stockholm and am currently deepening my skills as a Frontend Developer specializing in web security at Jensen Higher Vocational Education in Kista. Belonging to the FWK23S class, I am expected to complete my education by the summer of 2025. My lifelong interest in computers has been a driving force that is now guiding me towards a career in an area that I find extremely fascinating and interesting. I am seeking an internship starting from the fall of 2024 for a period of six months to further enhance my skills and gain practical experience.",
       "contactBtn": "Contact",
       "resumeBtn": "Get CV"
     },
     "project": {
       "title": "Projects",
-      "description": "Explore some of my projects by clicking on the links below. Additionally, there are more projects available on my GitHub profile for a more comprehensive overview of my portfolio. There, you can follow my development journey and access my projects."
+      "description": "Explore some of my projects by clicking on the links below. Additionally, there are more projects available on my GitHub profile for a more comprehensive overview of my portfolio. There, you can follow my development journey and access my projects, please note that several of my projects are ongoing, and I am working on them as time permits."
     },
     "knowledge": {
       "title": "Skills",
@@ -32,13 +32,14 @@
         "name": "Name:",
         "email": "Email:",
         "message": "Message:",
-        "submitBtn": "Send"
+        "submitBtn": "Send",
+        "clearBtn": "Clear"
       }
     },
     "languageBtn": {
-      "selector": "Language (ENG)",
+      "selector": "Language",
       "swedish": "Swedish",
-      "english": "English"
+      "english": "English ✓"
     },
     "pdfviewer": {
       "next": "Next",

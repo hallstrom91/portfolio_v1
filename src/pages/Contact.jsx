@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import Social from "@components/Social";
 // translation
 import { useTranslation } from "react-i18next";
-
-import Social from "../components/Social";
+//icons
 import { PiGithubLogoThin } from "react-icons/pi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
+import { BiMailSend } from "react-icons/bi";
+import { BiSolidTrash } from "react-icons/bi";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -94,86 +96,107 @@ export default function Contact() {
     e.target.reset();
   }
 
+  function clearForm(e) {
+    e.preventDefault();
+    const form = e.target.closest("form");
+    if (form) {
+      form.reset();
+    }
+  }
+
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-slate-600 to-slate-500 text-white"
+      className="bg-gradient-to-b from-slate-600 to-slate-500 pt-5 pb-10"
     >
-      <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap justify-center align-middle">
-        <div className="lg:w-full md:w-full bg-opacity-0 rounded-xl overflow-hidden flex items-center justify-center">
-          <div className="bg-slate-700 relative flex flex-wrap py-6 rounded-xl shadow-md sm:w-full md:w-1/2 lg:w-1/2 mx-auto">
-            <div className="lg:w-full px-6 mt-4 lg:mt-0">
-              <form
-                onSubmit={sendEmail}
-                name="contact"
-                className="lg-w-full md:w-full flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 "
-              >
-                <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font flex justify-center items-center anta-regular">
-                  {t("translation.contact.title")}
-                  <MdOutlineMarkEmailRead className="ml-1" />
-                </h2>
-                <p className="leading-relaxed mb-5 text-center">
-                  {t("translation.contact.description")}
-                </p>
-                <div className="relative mb-4">
-                  <label
-                    htmlFor="name"
-                    className="leading-7 text-sm text-white"
-                  >
-                    {t("translation.contact.form.name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    autoComplete="name"
-                    className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-                <div className="relative mb-4">
-                  <label
-                    htmlFor="email"
-                    className="leading-7 text-sm text-white"
-                  >
-                    {t("translation.contact.form.email")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autoComplete="email"
-                    className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-                <div className="relative mb-4">
-                  <label
-                    htmlFor="message"
-                    className="leading-7 text-sm text-white"
-                  >
-                    {t("translation.contact.form.message")}
-                  </label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={5}
-                    className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1  resize-y leading-2 md:leading-2 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
+      <div className="py-6 flex md:flex-col justify-center md:py-12">
+        <div className="relative py-3 w-[85%] md:w-1/2 2xl:w-1/3 md:mx-auto justify-center">
+          {/* background container skew */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-700 to-bg-slate-900 shadow-lg transform -skew-y-8 rounded-2xl md:skew-y-0 md:rotate-6 md:rounded-3xl rotate-3"></div>
+
+          <div className="text-white relative px-4 py-8 bg-slate-600 shadow-lg rounded-2xl p-10 md:rounded-3xl md:p-20">
+            <div className="text-center pb-6">
+              {/* contact card title */}
+
+              <h2 className="text-white md:text-4xl text-3xl mb-4 font-medium flex justify-center items-center anta-regular">
+                {t("translation.contact.title")}
+                <MdOutlineMarkEmailRead className="ml-1" />
+              </h2>
+
+              {/* contact card description */}
+              <p className="leading-relaxed mb-5 text-center ">
+                {t("translation.contact.description")}
+              </p>
+            </div>
+            {/*    Email Form (emailjs)  */}
+            <form
+              onSubmit={sendEmail}
+              name="contact"
+              className="lg-w-full md:w-full flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 "
+            >
+              <div className="relative mb-4">
+                <label htmlFor="name" className="leading-7 text-sm text-white">
+                  {t("translation.contact.form.name")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autoComplete="name"
+                  className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="relative mb-4">
+                <label
+                  htmlFor="email"
+                  className="leading-7 text-sm text-white md"
+                >
+                  {t("translation.contact.form.email")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="relative mb-4">
+                <label
+                  htmlFor="message"
+                  className="leading-7 text-sm text-white"
+                >
+                  {t("translation.contact.form.message")}
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={5}
+                  className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1  resize-y leading-2 md:leading-2 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="flex justify-between">
                 <button
                   type="submit"
-                  className="text-white bg-sky-950 border-0 py-2 px-6 focus:inline-none hover:bg-sky-600 rounded text-lg"
+                  className="flex text-white bg-green-900 border-0 py-2 px-6 focus:inline-none md:hover:bg-green-600 rounded md:text-lg shadow-lg"
                 >
                   {t("translation.contact.form.submitBtn")}
+                  <BiMailSend className="ml-2" size={25} />
                 </button>
-                <div className="flex justify-center pt-8 text-sky-300">
-                  {stateMessage && <p>{stateMessage}</p>}
-                </div>
-              </form>
-            </div>
+                <button
+                  type="reset"
+                  onClick={clearForm}
+                  className="flex text-white bg-red-900 border-0 py-2 px-6 focus:inline-none md:hover:bg-red-600 rounded md:text-lg shadow-lg"
+                >
+                  {t("translation.contact.form.clearBtn")}
+                  <BiSolidTrash className="ml-2" size={25} />
+                </button>
+              </div>
+              <div className="flex justify-center pt-8 text-black md:text-lg">
+                {stateMessage && <p>{stateMessage}</p>}
+              </div>
+            </form>
           </div>
-          {/*           <div id="test_div" className="">
-            <PdfViewer />
-          </div> */}
         </div>
       </div>
     </section>

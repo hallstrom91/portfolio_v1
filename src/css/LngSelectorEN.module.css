@@ -1,0 +1,86 @@
+.LngBtn,
+.LngBtn *,
+.LngBtn :after,
+.LngBtn :before,
+.LngBtn:after,
+.LngBtn:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.LngBtn {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  appearance: button;
+  background-color: #383737;
+  background-image: url("/images/english.png");
+  background-size: 100% 100%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.LngBtn:disabled {
+  cursor: default;
+}
+.LngBtn:-moz-focusring {
+  outline: auto;
+}
+
+.LngBtn [hidden] {
+  display: none;
+}
+.LngBtn {
+  border: 1px solid;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 1.1em 4em;
+  position: relative;
+  text-transform: uppercase;
+}
+.LngBtn .new,
+.LngBtn .old span {
+  font-weight: 900;
+  transition: transform 0.5s;
+}
+.LngBtn .new {
+  display: block;
+  transform: scale(0);
+  color: #000;
+  font-size: x-large;
+  font-weight: bolder;
+}
+.LngBtn:hover .new {
+  transform: scale(1);
+}
+.LngBtn .old,
+.LngBtn .old span {
+  inset: 0;
+  position: absolute;
+}
+.LngBtn .old span {
+  background: #fff;
+  color: #000;
+  display: block;
+  display: grid;
+  place-items: center;
+}
+.LngBtn .old span:first-child {
+  -webkit-clip-path: polygon(0 0, 51% 0, 51% 100%, 0 100%);
+  clip-path: polygon(0 0, 51% 0, 51% 100%, 0 100%);
+}
+.LngBtn .old span:nth-child(2) {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+.LngBtn:hover .old span:first-child {
+  transform: translateX(-100%);
+}
+.LngBtn:hover .old span:nth-child(2) {
+  transform: translateX(100%);
+}

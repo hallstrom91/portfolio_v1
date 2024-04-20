@@ -1,16 +1,18 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Element } from "react-scroll";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
-import Knowledge from "./pages/Knowledge";
+import About from "@pages/About";
+import Contact from "@pages/Contact";
+import Projects from "@pages/Projects";
+import Knowledge from "@pages/Knowledge";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
 
 export default function Switch() {
   return (
     <>
+      <Navbar />
       <Routes>
-        {/* SINGLE-PAGE-APP-LAYOUT */}
+        {/* MAIN-APP-LAYOUT */}
         <Route
           path="/"
           element={
@@ -31,6 +33,7 @@ export default function Switch() {
           }
         />
       </Routes>
+      <Footer />
     </>
   );
 }
