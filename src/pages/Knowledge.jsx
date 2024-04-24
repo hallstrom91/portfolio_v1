@@ -15,6 +15,7 @@ export default function Knowledge() {
         className="bg-gradient-to-b from-slate-700 to-slate-600 pb-10"
       >
         <div className="container px-5 py-10 mx-auto">
+          {/* SKillz text */}
           <div className="text-center mb-20 text-white">
             <GiMicrochip className="w-10 inline-block mb-4" size={40} />
             <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4 anta-regular underline">
@@ -24,6 +25,7 @@ export default function Knowledge() {
               {t("translation.knowledge.description")}
             </p>
           </div>
+          {/* Card Box */}
           <div
             className={`${styles.backgroundSplashWhite} bg-cyan-900 mx-auto lg:w-[50%] rounded-2xl justify-center shadow-lg`}
           >

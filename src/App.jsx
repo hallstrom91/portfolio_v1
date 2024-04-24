@@ -10,6 +10,7 @@ import i18n from "../i18n";
 import Cookies from "js-cookie";
 // Cookie HOC - delcine or accept to make it go away
 import CookiePolicyHOC from "@helper/CookiePolicyHOC";
+
 function App() {
   const navigate = useNavigate();
 

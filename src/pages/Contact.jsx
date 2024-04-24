@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import emailjs from "@emailjs/browser";
 import Social from "@components/Social";
 // translation
 import { useTranslation } from "react-i18next";
 //icons
-import { PiGithubLogoThin } from "react-icons/pi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { BiMailSend } from "react-icons/bi";
 import { BiSolidTrash } from "react-icons/bi";
@@ -13,110 +11,57 @@ export default function Contact() {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
-  const [emailEnvs, setEmailEnvs] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  /*   const SERVICE = import.meta.env.VITE_EMAILJS_SERVICE;
-  const TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE;
-  const MYKEY = import.meta.env.VITE_EMAILJS_MYKEY; */
+  // handle input
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  // get env-vars from nodejs
-  useEffect(() => {
-    fetch("/email-vars")
-      .then((response) => response.json())
-      .then((data) => {
-        setEmailEnvs(data.emailVars);
-      })
-      .catch((error) => {
-        console.error("Error fetching email variables", error);
-      });
-  }, []);
-
-  const { SERVICE, TEMPLATE, MYKEY } = emailEnvs;
-  console.log("emailenvs", emailEnvs);
-
-  function sendEmail(e) {
-    e.preventDefault();
+  // send email
+  const sendEmail = async () => {
     setIsSubmitting(true);
-
-    const name = e.target.name.value.trim();
-    const email = e.target.email.value.trim();
-    const message = e.target.message.value.trim();
-
-    if (name === "" && email === "") {
-      setStateMessage("Fyll i dina uppgifter.");
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setStateMessage(null);
-      }, 5000);
-      return;
-    } else if (name === "") {
-      setStateMessage("Fyll i ditt namn.");
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setStateMessage(null);
-      }, 5000);
-      return;
-    } else if (email === "") {
-      setStateMessage("Fyll i en giltig email.");
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setStateMessage(null);
-      }, 5000);
-      return;
-    }
-
-    const emailRegex =
-      /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
-    if (!emailRegex.test(email)) {
-      setStateMessage("Använd en giltig email.");
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setStateMessage(null);
-      }, 5000);
-      return;
-    }
-
-    if (message === "") {
-      setStateMessage("Skriv gärna en rad.");
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setStateMessage(null);
-      }, 5000);
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    emailjs
-      .sendForm(SERVICE, TEMPLATE, e.target, {
-        publicKey: MYKEY,
-      })
-      .then(
-        () => {
-          setStateMessage("Tack för ditt meddelande!");
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000);
+    try {
+      const response = await fetch("/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          setStateMessage("Något gick tyvärr fel. Försök igen senare.");
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000);
-        }
-      );
-    e.target.reset();
-  }
-
-  function clearForm(e) {
-    e.preventDefault();
-    const form = e.target.closest("form");
-    if (form) {
-      form.reset();
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+      if (response.ok) {
+        setStateMessage(t("translation.contact.form.emailSent"));
+        setTimeout(() => {
+          setStateMessage("");
+        }, 5000);
+      } else {
+        throw new Error("Kunde inte skicka epost.");
+      }
+    } catch (error) {
+      setStateMessage(t("translation.contact.form.emailFailed"));
+      setTimeout(() => {
+        setStateMessage("");
+      }, 5000);
     }
-  }
+    setIsSubmitting(false);
+  };
+
+  const clearForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
 
   return (
     <section
@@ -143,8 +88,7 @@ export default function Contact() {
               </p>
             </div>
             {/*    Email Form (emailjs)  */}
-            <form
-              onSubmit={sendEmail}
+            <div
               name="contact"
               className="lg-w-full md:w-full flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 "
             >
@@ -156,6 +100,8 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInput}
                   autoComplete="name"
                   className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
                 />
@@ -171,6 +117,8 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInput}
                   autoComplete="email"
                   className="w-full bg-white rounded border border-gray-700 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1 leading-8 transition-colors duration-200 ease-in-out"
                 />
@@ -185,12 +133,19 @@ export default function Contact() {
                 <textarea
                   name="message"
                   id="message"
+                  value={formData.message}
+                  onChange={handleInput}
                   rows={5}
                   className="w-full bg-white rounded border border-black focus:border-indigo-400 focus:ring-2 focus:ring-indigo-950 text-base outline-none text-black py-1 px-1  resize-y leading-2 md:leading-2 transition-colors duration-200 ease-in-out"
                 />
               </div>
               <div className="flex justify-between">
                 <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    sendEmail();
+                    clearForm();
+                  }}
                   type="submit"
                   className="flex text-white bg-green-900 border-0 py-2 px-6 focus:inline-none md:hover:bg-green-600 rounded md:text-lg shadow-lg"
                 >
@@ -209,7 +164,7 @@ export default function Contact() {
               <div className="flex justify-center pt-8 text-black md:text-lg">
                 {stateMessage && <p>{stateMessage}</p>}
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

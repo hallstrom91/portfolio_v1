@@ -33,7 +33,9 @@
         "email": "Email:",
         "message": "Message:",
         "submitBtn": "Send",
-        "clearBtn": "Clear"
+        "clearBtn": "Clear",
+        "emailSent": "Your message has been sent.",
+        "emailFailed": "Your message could not be sent."
       }
     },
     "languageBtn": {

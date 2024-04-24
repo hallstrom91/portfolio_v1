@@ -33,7 +33,9 @@
         "email": "Email:",
         "message": "Meddelande:",
         "submitBtn": "Skicka",
-        "clearBtn": "Rensa"
+        "clearBtn": "Rensa",
+        "emailSent": "Ditt meddelande har skickats.",
+        "emailFailed": "Ditt meddelande kunde inte skickas."
       }
     },
     "languageBtn": {

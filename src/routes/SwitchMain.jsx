@@ -38,25 +38,3 @@ function MainAppLayout() {
     </>
   );
 }
-
-{
-  /* <Route
-  path="/app"
-  element={
-    <>
-      <Element path="" name="about">
-        <About />
-      </Element>
-      <Element name="projects">
-        <Projects />
-      </Element>
-      <Element name="knowledge">
-        <Knowledge />
-      </Element>
-      <Element name="contact">
-        <Contact />
-      </Element>
-    </>
-  }
-/> */
-}

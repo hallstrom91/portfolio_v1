@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
-
+const emailjs = require("@emailjs/nodejs");
 dotenv.config();
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(helmet());
 
 // path
 app.use(express.static(path.join(__dirname, "dist")));
-
+app.use(express.json());
 // host static dirs imgs etc.
 app.use("/assets", express.static(path.join(__dirname, "dist", "assets")));
 app.use("/images", express.static(path.join(__dirname, "dist", "images")));
@@ -30,15 +30,30 @@ app.get("/app/*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-// send email-env vars to app thru server
-app.get("/email-vars", (req, res) => {
-  const emailVars = {
-    service: process.env.EMAILJS_SERVICE,
-    template: process.env.EMAILJS_TEMPLATE,
-    myKey: process.env.EMAILJS_MYKEY,
-  };
-  res.json({ emailVars });
-  console.log("emailVars", emailVars);
+//emailjs function
+app.post("/send-email", async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+
+    const response = await emailjs.send(
+      process.env.EMAILJS_SERVICE,
+      process.env.EMAILJS_TEMPLATE,
+      {
+        name: name,
+        email: email,
+        message: message,
+      },
+      {
+        publicKey: process.env.EMAILJS_MYKEY,
+        privateKey: process.env.EMAILJS_PRIVATE,
+      }
+    );
+    console.log("Epost skickat", response);
+    res.status(200).json({ message: "Epost skickat." });
+  } catch (error) {
+    console.error("Misslyckad epost utskick.", error);
+    res.status(500).json({ error: "Ett fel uppstod vid utskick av mail." });
+  }
 });
 
 app.listen(PORT, () => {

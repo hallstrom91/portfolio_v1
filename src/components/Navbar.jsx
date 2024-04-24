@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 // icons
-import { MdMarkEmailRead } from "react-icons/md";
-import { BsFillMenuButtonWideFill } from "react-icons/bs";
-import { HiSquares2X2 } from "react-icons/hi2";
 import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { ImCross } from "react-icons/im";
-import { FaWindowClose } from "react-icons/fa";
 
 export default function Navbar() {
   // use translation
@@ -84,6 +80,15 @@ export default function Navbar() {
           <div className="lg:flex md:flex font-normal hidden">
             <div className="flex-10">
               <ul className="flex gap-10 text-[18px] uppercase">
+                <li className="hover:text-slate-600 transition border-b-2 border-opacity-0 hover:border-opacity-100 border-slate-800 hover:border-white cursor-pointer">
+                  {/* NAV ABOUT LINK */}
+                  <ScrollLink
+                    to="about"
+                    className="mr-2 md:hover:text-cyan-600 anta-regular"
+                  >
+                    {t("translation.navbar.about")}
+                  </ScrollLink>
+                </li>
                 <li className="hover:text-slate-600 transition border-b-2 border-opacity-0 hover:border-opacity-100 border-slate-800 hover:border-white cursor-pointer">
                   {/* NAV ABOUT LINK */}
                   <ScrollLink

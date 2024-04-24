@@ -5,6 +5,7 @@ import { MdOutlineFindInPage } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";
 import { FaReact } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
+import TimeLine from "@components/TimeLine";
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -70,6 +71,9 @@ export default function Projects() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="px-5 py-10 flex justify-center">
+          <TimeLine />
         </div>
       </section>
     </>
